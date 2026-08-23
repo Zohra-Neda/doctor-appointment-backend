@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  phone: MyString
+  years_of_experience: 1
+  patients_count: 1
+  start_time: 2026-08-22 22:39:28
+  end_time: 2026-08-22 22:39:28
+  premium: false
+  about: MyText
+  category: one
+
+two:
+  name: MyString
+  address: MyString
+  phone: MyString
+  years_of_experience: 1
+  patients_count: 1
+  start_time: 2026-08-22 22:39:28
+  end_time: 2026-08-22 22:39:28
+  premium: false
+  about: MyText
+  category: two
