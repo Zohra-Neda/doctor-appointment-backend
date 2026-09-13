@@ -5,6 +5,12 @@ class Api::DoctorsController < ApplicationController
     render json: doctors.map { |doctor| doctor_response(doctor) }
   end
 
+  def show
+    doctor = Doctor.includes(:category).find(params[:id])
+
+    render json: doctor_response(doctor)
+  end
+
   private
 
   def doctor_response(doctor)
