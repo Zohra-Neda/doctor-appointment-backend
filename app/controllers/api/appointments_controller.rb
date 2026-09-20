@@ -2,6 +2,10 @@ class Api::AppointmentsController < ApplicationController
   def index
     appointments = Appointment.includes(:doctor, :user)
 
+    if params[:email].present?
+      appointments = appointments.joins(:user).where(users: { email: params[:email] })
+    end
+
     render json: appointments.map { |appointment| appointment_response(appointment) }
   end
 
