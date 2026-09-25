@@ -2,6 +2,10 @@ class Api::DoctorsController < ApplicationController
   def index
     doctors = Doctor.includes(:category)
 
+    if params[:category].present?
+      doctors = doctors.joins(:category).where(categories: { name: params[:category] })
+    end
+
     render json: doctors.map { |doctor| doctor_response(doctor) }
   end
 
